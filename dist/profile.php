@@ -109,7 +109,7 @@
                             <input type="submit" value="MUTE" class="nk-btn nk-btn-rounded nk-btn-color-main-1 nk-btn-hover-color-white" name="form_mute">
                         </div>
                     </form>
-                <?php } ?>
+                <?php } else {} ?>
                 <div style="text-align: center;">
                     <h3>RANK - <span class="text-main-1">Battlerite</span> Community</h3>
                     <img src="assets/images/<?php echo $userinfo['rank'] ?>.png" alt="rank">
