@@ -1,6 +1,19 @@
 <?php include "assets/include/header.php" ?>
 <?php include "assets/include/cookieconnect.php" ?>
-
+<?php 
+$articleparpage = 4;
+$articleTotal = $con->query('SELECT id_video from video');
+$patchTotal = $articleTotal->rowCount();
+$pagesTotales = ceil($patchTotal/$articleparpage);
+if (isset($_GET['page']) AND !empty($_GET['page']) AND $_GET['page'] > 0 AND $_GET['page'] <= $pagesTotales) {
+    $_GET['page'] = intval($_GET['page']);
+    $pagecourante= $_GET['page'];
+} else
+{
+    $pagecourante = 1;
+}
+$depart = ($pagecourante-1)*$articleparpage;
+?>
 
 
     <div class="nk-main">
@@ -45,7 +58,7 @@
                     <div class="nk-blog-list">
 
                         <?php
-                            $video=$con->prepare( 'SELECT title_video,lien_video,id_video FROM video order by id_video desc limit 0,4');
+                            $video=$con->prepare( 'SELECT title_video,lien_video,id_video FROM video order by id_video desc limit '.$depart.','.$articleparpage);
                             $video ->execute();
                             while ($vid=$video->fetch()) { ?>
                         <!-- START: Post -->
@@ -60,6 +73,21 @@
                         <div class="nk-gap-2"></div>
                         <!-- END: Post -->
                         <?php } ?>
+                        <!-- START: Pagination -->
+                        <div class="nk-pagination nk-pagination-center">
+
+                            <nav>
+                            <?php 
+                            for ($i=1; $i<=$pagesTotales ; $i++) {
+                                if($i == $pagecourante) { echo '<span class="nk-pagination-current">'.$pagecourante.'</span>'; }
+                                else { ?>
+                                <a href="video.php?page=<?=$i ?>"><?=$i ?></a>
+                                <?php } ?>
+                            <?php } ?>
+                            </nav>
+                        </div>
+
+                        <!-- END: Pagination -->
                     </div>
                     <!-- END: Posts List -->
 
