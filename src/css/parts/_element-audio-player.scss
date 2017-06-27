@@ -1,0 +1,115 @@
+/* Plain Audio Player */
+.nk-audio-plain {
+    display: table;
+    width: 100%;
+    padding: 20px 15px;
+    background-color: $color_dark_2;
+    border: 1px solid $color_dark_3;
+    border-radius: 4px;
+
+    > div {
+        display: table-cell;
+    }
+    .nk-audio-plain-title {
+        width: 99%;
+    }
+    .nk-audio-plain-buttons {
+        white-space: nowrap;
+
+        > a {
+            display: inline-block;
+            color: inherit;
+            text-decoration: none;
+            text-align: center;
+            width: 30px;
+        }
+    }
+
+
+    .nk-audio-plain-play-pause {
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        cursor: pointer;
+        background-color: lighten($color_dark_4, 10%);
+        color: #fff;
+        width: 38px;
+        height: 38px;
+        line-height: 38px;
+        border-radius: 19px;
+        margin-left: 7px;
+        margin-right: 15px;
+        font-size: 1.1rem;
+
+        .nk-audio-plain-pause {
+            display: none;
+        }
+    }
+    &.nk-audio-plain-playing .nk-audio-plain-play-pause .nk-audio-plain-play {
+        display: none;
+    }
+    &.nk-audio-plain-playing .nk-audio-plain-play-pause .nk-audio-plain-pause {
+        display: block;
+    }
+    .nk-audio-plain-duration {
+        display: inline-block;
+        text-align: right;
+        font-size: 0.9rem;
+        margin-right: 7px;
+        width: 58px;
+    }
+
+    // progress
+    .nk-audio-progress {
+        position: relative;
+        background-color: $color_dark_4;
+        cursor: pointer;
+        left: 0;
+        right: 0;
+        height: 1px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        z-index: 1;
+
+        &:before {
+            content: '';
+            position: absolute;
+            display: block;
+            top: -8px;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+        }
+    }
+    .nk-audio-progress .nk-audio-progress-current {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        background-color: lighten($color_dark_4, 20%);
+        transition: .3s background-color;
+        z-index: 1;
+
+        &:after {
+            content: '';
+            position: absolute;
+            right: -2px;
+            top: -2px;
+            width: 5px;
+            height: 5px;
+            border-radius: 2.5px;
+            background-color: lighten($color_dark_4, 40%);
+            transform: scale(0);
+            transition: .3s transform;
+        }
+    }
+    .nk-audio-progress:hover .nk-audio-progress-current,
+    .nk-audio-progress.hover .nk-audio-progress-current {
+        background-color: lighten($color_dark_4, 40%);
+
+        &:after {
+            transform: scale(1);
+        }
+    }
+}

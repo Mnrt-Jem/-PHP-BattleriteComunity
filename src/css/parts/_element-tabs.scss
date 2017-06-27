@@ -1,0 +1,63 @@
+.nk-tabs {
+    &:before {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    .nav-tabs {
+        border-bottom: none;
+
+        .nav-item + .nav-item {
+            margin-left: 10px;
+        }
+
+        .nav-item,
+        .nav-link,
+        .nav-item.open .nav-link,
+        .nav-link.active {
+            &,
+            &:focus,
+            &:hover {
+                border-radius: 0;
+                color: $color_headings;
+            }
+        }
+
+        .nav-link {
+            font-family: $font_headings;
+            background-color: $color_dark_3;
+            border: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px 15px;
+            min-width: 100px;
+            transition: .15s background-color;
+
+            &:focus,
+            &:hover {
+                background-color: lighten($color_dark_3, 3%);
+            }
+        }
+        .nav-link.active {
+            &,
+            &:focus,
+            &:hover {
+                background-color: $color_main_1;
+            }
+        }
+
+        // fill tabs
+        &.nav-tabs-fill {
+            display: flex;
+            flex-flow: row wrap;
+            margin: -10px -5px;
+
+            .nav-item {
+                flex: 1;
+                margin: 10px 5px;
+            }
+        }
+    }
+}

@@ -1,0 +1,257 @@
+.nk-blog-post {
+    margin-bottom: 30px;
+
+    .nk-blog-isotope & {
+        margin-bottom: 40px;
+    }
+}
+.nk-post-title {
+    margin-bottom: 10px;
+}
+.nk-post-title > a {
+    text-decoration: none;
+    color: inherit;
+    transition: .15s color;
+
+    &:hover,
+    &.hover {
+        color: $color_main_1;
+    }
+}
+
+.nk-post-img {
+    position: relative;
+    display: block;
+
+    img {
+        width: 100%;
+    }
+
+    .nk-post-comments-count {
+        position: absolute;
+        display: block;
+        bottom: 10px;
+        right: 10px;
+        text-align: center;
+        vertical-align: text-top;
+        font-weight: bold;
+        min-width: 33px;
+        padding: 0 8px;
+        height: 29px;
+        line-height: 29px;
+        border-radius: 50%;
+        background-color: $color_headings;
+
+        &,
+        &:focus,
+        &:hover,
+        &:active {
+            text-decoration: none;
+            color: $color_dark_1;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            display: inline-block;
+            bottom: -2px;
+            left: 65%;
+            width: 0;
+            height: 0;
+            vertical-align: middle;
+            transform: rotate(-30deg);
+            border-top: 9px solid $color_headings;
+            border-right: 6px solid transparent;
+            border-left: 6px solid transparent;
+        }
+    }
+}
+
+// posted by
+.nk-post-by {
+    font-size: 0.8em;
+    margin-top: 15px;
+
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    img {
+        margin-right: 11px;
+    }
+}
+
+// categories list
+.nk-post-categories {
+    float: right;
+    font-size: 1rem;
+    margin-top: 6px;
+
+    span,
+    a {
+        color: $color_headings;
+        background-color: $color_dark_3;
+        padding: 2px 19px;
+        border-radius: 4px;
+
+        + span,
+        + a {
+            margin-left: 7px;
+        }
+    }
+
+    .nk-post-img & {
+        position: absolute;
+        top: 10px;
+        left: 0;
+
+        span,
+        a {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+}
+
+// date
+.nk-post-date {
+    font-size: 0.9em;
+    margin-top: 5px;
+    color: $color_text;
+
+    span {
+        margin-right: 6px;
+        font-size: 1rem;
+
+        ~ span {
+            margin-left: 10px;
+        }
+    }
+    
+    a {
+        color: inherit;
+        text-decoration: none;
+
+        &:hover,
+        &.hover,
+        &:focus,
+        &:active {
+            color: $color_main_1;
+        }
+    }
+}
+
+// border for posts
+.nk-blog-post-border-bottom {
+    border-bottom: 1px solid $color_dark_3;
+    padding-bottom: 20px;
+    margin-bottom: 22px;
+}
+
+.nk-post-share {
+    background-color: $color_dark_3;
+    padding: 15px;
+
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    ul {
+        float: right;
+        margin-top: -4px;
+        margin-bottom: -4px;
+    }
+}
+
+.nk-post-text {
+    &:after,
+    &:before {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    .pull-right,
+    .pull-left {
+        margin: 20px;
+    }
+    .pull-right {
+        margin-right: 0;
+    }
+    .pull-left {
+        margin-left: 0;
+    }
+
+    > p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* FullWidth Posts */
+.nk-blog-fullwidth {
+    .nk-post-by {
+        font-size: 1em;
+        text-align: right;
+        margin-top: 0;
+
+        img {
+            float: right;
+            margin-left: 20px;
+        }
+    }
+}
+
+// comments
+$comments_avatar_width: 50px;
+.nk-comments {
+    .nk-comment {
+        &:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        // review title
+        h4 {
+            margin-top: 25px;
+        }
+
+        .nk-comment {
+            margin-left: 120px;
+
+            @media #{$media_xs} {
+                margin-left: 80px;
+            }
+
+            @media #{$media_xxs} {
+                margin-left: 30px;
+            }
+        }
+
+        .nk-comment,
+        + .nk-comment {
+            padding-top: 20px;
+            clear: both;
+        }
+
+        // comment meta
+        .nk-comment-meta {
+            font-size: 0.8em;
+            margin-bottom: 15px;
+
+            img {
+                margin-right: 11px;
+            }
+        }
+
+        // comment text
+        .nk-comment-text {
+            border-bottom: 1px solid $color_dark_3;
+            padding-bottom: 15px;
+        }
+    }
+}

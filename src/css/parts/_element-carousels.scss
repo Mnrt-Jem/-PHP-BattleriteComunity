@@ -1,0 +1,127 @@
+.nk-carousel {
+    position: relative;
+
+    .flickity-slider > div {
+        display: block;
+        width: 100%;
+        padding: 17px 0;
+    }
+}
+.flickity-page-dots .dot {
+    background: #808080;
+}
+.nk-flickity-arrow {
+    position: absolute;
+    cursor: pointer;
+    text-align: center;
+    color: $color_headings;
+    font-size: 2.6rem;
+    line-height: 1.3;
+    top: 50%;
+    padding: 1px;
+    width: 56px;
+    height: 56px;
+    margin-top: -29px;
+    border-radius: 50%;
+    border: 4px solid;
+    transition: .15s color;
+    z-index: 1;
+
+    &:hover,
+    &.hover,
+    &:active,
+    &:focus {
+        color: $color_main_1;
+    }
+
+    &.nk-flickity-arrow-prev {
+        left: -100px;
+        padding-right: 5px;
+    }
+    &.nk-flickity-arrow-next {
+        right: -100px;
+        padding-left: 5px;
+    }
+
+    @media #{$media_smaller_sm} {
+        display: none;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+// padding for arrows
+.nk-carousel[data-arrows=true] .nk-carousel-inner {
+    margin-left: 100px;
+    margin-right: 100px;
+
+    @media #{$media_smaller_sm} {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+// fix click event
+.flickity-viewport.is-dragging {
+    pointer-events: none;
+}
+
+.nk-carousel {
+    .flickity-slider > div {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    // x2 size
+    &.nk-carousel-x2 .flickity-slider > div {
+        width: 33.3334%;
+        @media #{$media_smaller_md} {
+            width: 33.3334%;
+        }
+        @media #{$media_xs} {
+            width: 50%;
+        }
+        @media #{$media_xxs} {
+            width: 100%;
+        }
+    }
+    // x3 size
+    &.nk-carousel-x3 .flickity-slider > div {
+        width: 25%;
+        @media #{$media_smaller_md} {
+            width: 33.3334%;
+        }
+        @media #{$media_xs} {
+            width: 50%;
+        }
+        @media #{$media_xxs} {
+            width: 100%;
+        }
+    }
+    // x4 size
+    &.nk-carousel-x4 .flickity-slider > div {
+        width: 20%;
+        @media #{$media_smaller_md} {
+            width: 25%;
+        }
+        @media #{$media_xs} {
+            width: 33.3334%;
+        }
+        @media #{$media_xxs} {
+            width: 50%;
+        }
+    }
+    // x5 size
+    &.nk-carousel-x5 .flickity-slider > div {
+        width: 14.285%;
+        @media #{$media_smaller_md} {
+            width: 20%;
+        }
+        @media #{$media_xs} {
+            width: 25%;
+        }
+        @media #{$media_xxs} {
+            width: 50%;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.nk-accordion {
+    .panel-heading {
+        margin-bottom: 12px;
+        a {
+            display: block;
+            font-family: $font_headings;
+            background-color: $color_dark_3;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: $color_headings;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: .15s background-color;
+
+            &:focus,
+            &:hover {
+                background-color: lighten($color_dark_3, 3%);
+            }
+
+            &:not(.collapsed) {
+                &,
+                &:focus,
+                &:hover {
+                    background-color: $color_main_1;
+                }
+                .panel-heading-arrow {
+                    transform: rotate(-180deg);
+                }
+            }
+
+            .panel-heading-arrow {
+                font-size: 1.3rem;
+                float: right;
+                line-height: 1.35;
+                transition: .2s transform;
+            }
+        }
+    }
+}

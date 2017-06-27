@@ -1,0 +1,90 @@
+.nk-countdown {
+    width: 100%;
+    text-align: left;
+
+    &.nk-countdown-center {
+        text-align: center;
+    }
+    &.nk-countdown-right {
+        text-align: right;
+    }
+
+    .nk-hexagon {
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        text-align: center;
+
+        > span {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            font-family: $font_headings;
+            line-height: 1.2;
+        }
+
+        position: relative;
+        display: inline-block;
+        color: $color_headings;
+        width: 90px;
+        height: 51.96px;
+        background-color: rgba(#000, .35);
+        margin: 28px 8px;
+        z-index: 0;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 45px solid transparent;
+            border-right: 45px solid transparent;
+            z-index: -1;
+        }
+        &:before {
+            top: -25px;
+            border-bottom: 25px solid rgba(#000, .35);
+        }
+        &:after {
+            bottom: -25px;
+            border-top: 25px solid rgba(#000, .35);
+        }
+
+        .nk-hexagon-inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-left: solid 4px $color_main_1;
+            border-right: solid 4px $color_main_1;
+
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                z-index: 1;
+                width: 63.64px;
+                height: 63.64px;
+                -webkit-transform: scaleY(0.5774) rotate(-45deg);
+                -ms-transform: scaleY(0.5774) rotate(-45deg);
+                transform: scaleY(0.5774) rotate(-45deg);
+                background-color: inherit;
+                left: 9.1802px;
+            }
+
+            &:before {
+                top: -31.8198px;
+                border-top: solid 5.6569px $color_main_1;
+                border-right: solid 5.6569px $color_main_1;
+            }
+
+            &:after {
+                bottom: -31.8198px;
+                border-bottom: solid 5.6569px $color_main_1;
+                border-left: solid 5.6569px $color_main_1;
+            }
+        }
+    }
+}

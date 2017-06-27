@@ -1,0 +1,14 @@
+.nk-fullscreen-block {
+    display: table;
+    min-height: 100vh;
+    width: 100%;
+    
+    .nk-fullscreen-block-top,
+    .nk-fullscreen-block-middle,
+    .nk-fullscreen-block-bottom {
+        display: table-row;
+    }
+    .nk-fullscreen-block-middle {
+        height: 80%;
+    }
+}

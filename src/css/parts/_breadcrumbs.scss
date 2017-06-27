@@ -1,0 +1,49 @@
+.nk-breadcrumbs {
+    font-family: $font_headings;
+    text-transform: uppercase;
+    list-style-type: none;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    color: $color_headings;
+
+    > li {
+        display: inline-block;
+        font-size: 1.07rem;
+
+        + li {
+            margin-left: 6px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        a:hover,
+        a.hover {
+            color: $color_main_1;
+        }
+
+        &:last-of-type {
+            display: flex;
+            font-size: 2.025rem;
+            margin-left: 0;
+            margin-top: 9px;
+
+            > span,
+            > a {
+                display: block;
+                padding-right: 20px;
+                flex: auto;
+            }
+
+            &:after {
+                content: '';
+                display: block;
+                flex: 100;
+                border-bottom: 4px solid $color_main_1;
+                transform: translateY(-12px);
+            }
+        }
+    }
+}

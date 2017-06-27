@@ -1,0 +1,35 @@
+.nk-modal {
+    .modal-content {
+        border: none;
+        border-radius: 0;
+    }
+    .modal-body {
+        padding: 38px;
+    }
+
+    .modal-content {
+        background-color: $color_dark_2;
+    }
+
+    .modal-sm {
+        max-width: 470px;
+    }
+
+    .close {
+        position: absolute;
+        top: 38px;
+        right: 38px;
+        margin-top: 0;
+        font-size: 1.7rem;
+        color: inherit;
+        text-shadow: none;
+        z-index: 2;
+    }
+
+    @media #{$media_larger_xs} {
+        .modal-dialog {
+            margin-top: 190px;
+            margin-bottom: 60px;
+        }
+    }
+}

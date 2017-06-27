@@ -1,0 +1,221 @@
+
+// default buttons
+.nk-btn {
+    display: inline-block;
+    font-family: $font_headings;
+    border: 0;
+    padding: 9px 19px;
+    font-size: 0.87rem;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+    transition: .15s all;
+
+    &,
+    &:hover,
+    &.hover,
+    &:active,
+    &.active,
+    &:focus {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    // outline fix
+    &.nk-btn-outline {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}
+
+// sizes
+.nk-btn-xs {
+    font-size: 0.8rem;
+    padding: 6px 15px;
+
+    // outline fix
+    &.nk-btn-outline {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
+.nk-btn-sm {
+    padding: 7px 17px;
+
+    // outline fix
+    &.nk-btn-outline {
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+}
+.nk-btn-lg {
+    padding: 12px 22px;
+
+    // outline fix
+    &.nk-btn-outline {
+        padding-top: 11px;
+        padding-bottom: 11px;
+    }
+}
+.nk-btn-x2 {
+    font-size: 1rem;
+    padding: 14px 25px;
+
+    // outline fix
+    &.nk-btn-outline {
+        padding-top: 13px;
+        padding-bottom: 13px;
+    }
+}
+.nk-btn-x3 {
+    font-size: 1.1rem;
+    padding: 18px 30px;
+
+    // outline fix
+    &.nk-btn-outline {
+        padding-top: 17px;
+        padding-bottom: 17px;
+    }
+}
+.nk-btn-x4 {
+    font-size: 1.2rem;
+    padding: 20px 45px;
+
+    // outline fix
+    &.nk-btn-outline {
+        padding-top: 19px;
+        padding-bottom: 19px;
+    }
+}
+
+// colors
+@each $name, $color in $colors {
+    .nk-btn-color-#{$name} {
+        background-color: $color;
+        border-color: darken($color, 12%);
+        border-style: solid;
+
+        @if $name == 'white' {
+            &,
+            &:hover,
+            &.hover,
+            &:active,
+            &.active,
+            &:focus {
+                color: $color_dark_1;
+            }
+        }
+
+        &:hover,
+        &.hover {
+            background-color: darken($color, 6%);
+            border-color: darken($color, 18%);
+        }
+        &:active,
+        &.active {
+            background-color: darken($color, 10%);
+            border-color: darken($color, 22%);
+        }
+
+        &.nk-btn-outline {
+            color: $color;
+
+            &:hover,
+            &.hover {
+                color: darken($color, 10%);
+            }
+            &:active,
+            &.active {
+                color: darken($color, 20%);
+            }
+        }
+    }
+}
+
+// hover colors
+@each $name, $color in $colors {
+    .nk-btn-hover-color-#{$name} {
+        @if $name == 'white' {
+            &:hover,
+            &.hover,
+            &:active,
+            &.active,
+            &:focus {
+                color: $color_dark_1;
+            }
+        } @else {
+            // fix for white button text color
+            &.nk-btn-color-white {
+                &:hover,
+                &.hover,
+                &:active,
+                &.active {
+                    color: #fff;
+                }
+            }
+        }
+
+        &:hover,
+        &.hover {
+            background-color: $color;
+            border-color: darken($color, 12%);
+        }
+        &:active,
+        &.active {
+            background-color: darken($color, 6%);
+            border-color: darken($color, 18%);
+        }
+
+        &.nk-btn-outline {
+            &:hover,
+            &.hover {
+                color: darken($color, 10%);
+            }
+            &:active,
+            &.active {
+                color: darken($color, 20%);
+            }
+        }
+    }
+}
+
+// outline
+.nk-btn-outline {
+    border-width: 1px;
+
+    &,
+    &:hover,
+    &.hover,
+    &:active,
+    &.active,
+    &:focus {
+        background-color: transparent;
+        color: inherit;
+    }
+}
+
+// rounded
+.nk-btn-rounded {
+    border-radius: 4px;
+}
+
+// block
+.nk-btn-block {
+    display: block;
+    width: 100%;
+}
+
+
+// icons
+.nk-btn > .icon {
+    margin-right: 3px;
+}
+.nk-btn > span + .icon {
+    margin-left: 3px;
+    margin-right: 0;
+}

@@ -1,0 +1,95 @@
+.nk-pagination {
+    display: block;
+    color: $color_headings;
+    font-size: 1.7rem;
+    font-weight: bold;
+
+    // arrows
+    .nk-pagination-prev,
+    .nk-pagination-next {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer;
+        color: inherit;
+        text-decoration: none;
+
+        &.disabled {
+            opacity: 0.2;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        .nk-icon-arrow-right,
+        .nk-icon-arrow-left {
+            position: absolute;
+            top: 33px;
+        }
+        .nk-icon-arrow-right {
+            right: 0;
+        }
+        .nk-icon-arrow-left {
+            left: 0;
+        }
+    }
+    .nk-pagination-prev {
+        text-align: left;
+        padding-right: 14px;
+    }
+    .nk-pagination-next {
+        text-align: right;
+        padding-left: 14px;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+        transition: .15s color;
+
+        &:hover {
+            color: $color_main_1;
+        }
+    }
+
+    // nav
+    nav {
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+
+        > * {
+            padding-left: 15px;
+            padding-right: 15px;
+            float: left;
+
+            &.nk-pagination-current {
+                min-width: 42px;
+                height: 42px;
+                line-height: 42px - 4px * 2 - 3px * 2;
+                border-radius: 21px;
+                padding: 3px;
+                color: $color_main_1;
+                border: 4px solid;
+            }
+        }
+    }
+
+    // position
+    &.nk-pagination-center,
+    &.nk-pagination-left,
+    &.nk-pagination-right {
+        .nk-pagination-prev,
+        .nk-pagination-next {
+            float: none;
+        }
+    }
+    &.nk-pagination-center {
+        text-align: center;
+    }
+    &.nk-pagination-left {
+        text-align: left;
+    }
+    &.nk-pagination-right {
+        text-align: right;
+    }
+}

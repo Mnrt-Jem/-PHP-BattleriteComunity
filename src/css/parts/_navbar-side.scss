@@ -1,0 +1,197 @@
+.nk-navbar-side {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    padding: 0;
+    overflow: hidden;
+    z-index: 1002;
+    background-color: $color_dark_1;
+
+    @mixin rightSideSize($width) {
+        width: $width;
+        margin-right: -$width;
+    }
+    @mixin leftSideSize($width) {
+        width: $width;
+        margin-left: -$width;
+    }
+
+    // left side
+    &.nk-navbar-left-side {
+        left: 0;
+        @include leftSideSize(250px);
+
+        @media (max-width: 400px) {
+            @include leftSideSize(200px);
+        }
+    }
+
+    // right side
+    &.nk-navbar-right-side {
+        right: 0;
+        @include rightSideSize(250px);
+
+        @media (max-width: 400px) {
+            @include rightSideSize(200px);
+        }
+    }
+
+    // large size
+    &.nk-navbar-lg {
+        // left side
+        &.nk-navbar-left-side {
+            @include leftSideSize(350px);
+            @media (max-width: 550px) {
+                @include leftSideSize(300px);
+            }
+            @media (max-width: 450px) {
+                @include leftSideSize(250px);
+            }
+        }
+
+        // right side
+        &.nk-navbar-right-side {
+            @include rightSideSize(350px);
+            @media (max-width: 550px) {
+                @include rightSideSize(300px);
+            }
+            @media (max-width: 450px) {
+                @include rightSideSize(250px);
+            }
+        }
+    }
+
+    // logo
+    .nk-nav-logo {
+        display: block;
+        width: 100%;
+        padding: 20px 25px;
+    }
+    // logo for lg side
+    &.nk-navbar-lg .nk-nav-logo {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    // navigation
+    .nano {
+        height: 100%;
+        overflow-y: auto;
+    }
+    .nk-nav {
+        position: relative;
+        padding: 0;
+        overflow: hidden;
+        width: 100%;
+
+        > li {
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        .dropdown > li,
+        > li {
+            position: static;
+            display: block;
+
+            > a {
+                padding: 12px 25px;
+            }
+        }
+
+        // drop item icon
+        .nk-drop-item > a,
+        > .nk-drop-item > a,
+        .bropdown-back > a {
+            position: relative;
+        }
+        .nk-drop-item .nk-drop-item > a:after,
+        .nk-drop-item > a:after,
+        > .nk-drop-item > a:after {
+            position: absolute;
+            right: 20px;
+        }
+    }
+
+    // dropdown
+    .nk-nav .dropdown {
+        display: block;
+        opacity: 1;
+        background-color: transparent;
+        padding: 0;
+        border-bottom: 0;
+
+        &:before {
+            content: none;
+        }
+    }
+    .nk-nav .nk-drop-item > .dropdown,
+    .nk-nav .nk-drop-item .nk-drop-item > .dropdown {
+        top: 0;
+        left: 0;
+        margin-top: 0;
+        margin-left: 0;
+        width: 100%;
+
+        > li > a {
+            display: none;
+        }
+    }
+    // back icon
+    .dropdown > .bropdown-back > a:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        margin-top: -3px;
+        left: 15px;
+        color: inherit;
+        width: 0;
+        height: 0;
+        border: none;
+        border-top: 3px solid transparent;
+        border-bottom: 3px solid transparent;
+        border-right: 3px solid;
+        transition: .13s opacity;
+        will-change: opacity;
+        transform: none;
+    }
+
+    // icons
+    .nk-nav-icons {
+        list-style: none;
+        li {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+
+            > a {
+                padding: 0 15px;
+                display: inline-block;
+
+                > i,
+                > span {
+                    height: 32px;
+                    line-height: 32px;
+                    font-size: 1.2rem;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+}
+
+// overlay
+.nk-navbar-overlay {
+    position: fixed;
+    display: none;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    background-color: #000;
+    cursor: pointer;
+}

@@ -1,0 +1,131 @@
+
+/* Gallery Item */
+.nk-gallery-item-box,
+.nk-gallery-item-group {
+    position: relative;
+    display: block;
+    overflow: hidden;
+
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    & a,
+    & a:hover,
+    & a:focus,
+    & a:active {
+        text-decoration: none;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .nk-gallery-item {
+        display: block;
+    }
+
+    //  description for images
+    .nk-gallery-item-description {
+        position: absolute;
+        white-space: nowrap;
+        overflow: hidden;
+        text-indent: 100%;
+    }
+
+    // block with link
+    .nk-gallery-item-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    // label
+    .nk-gallery-item-label {
+        position: absolute;
+        background-color: $color_dark_1;
+        bottom: 30px;
+        padding: 17px 30px;
+    }
+
+    // overlay
+    .nk-gallery-item-overlay {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        color: $color_headings;
+        background-color: rgba($color_main_1, 0.75);
+        transition: .15s opacity;
+
+        > span {
+            width: 56px;
+            height: 56px;
+            line-height: 56px - 8px;
+            border-radius: 28px;
+            margin: 0 auto;
+            border: 4px solid $color_headings;
+            font-size: 3rem;
+            text-align: center;
+            opacity: 0.85;
+            transform: scale(0.95);
+            transition: .35s transform ease;
+        }
+    }
+    &:hover,
+    &.hover {
+        .nk-gallery-item-overlay {
+            opacity: 1;
+            > span {
+                transform: scale(1);
+            }
+        }
+    }
+}
+
+
+/* Gallery Group */
+.nk-gallery-item-group {
+    .nk-gallery-item-overlay {
+        background-color: rgba($color_dark_1, 0.65);
+
+        // 55px - height of description block
+        padding-bottom: 55px;
+    }
+
+    //  description
+    .nk-gallery-item-description {
+        position: absolute;
+        white-space: normal;
+        overflow: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-indent: 0;
+        padding: 20px 19px;
+        background-color: rgba($color_main_1, 0.75);
+        color: $color_headings;
+
+        .nk-gallery-item-description-title {
+            float: left;
+            margin-bottom: 0;
+            line-height: 1.1;
+        }
+        .nk-gallery-item-description-info {
+            float: right;
+            line-height: 1.1;
+
+            span:last-of-type {
+                font-weight: bold;
+                margin-left: 8px;
+            }
+        }
+    }
+}

@@ -1,0 +1,186 @@
+
+/* Teammate */
+.nk-teammate-card {
+    position: relative;
+    display: table;
+    background-color: darken($color_dark_1, 7%);
+
+    .nk-teammate-card-photo {
+        display: table-cell;
+        width: 50%;
+        vertical-align: bottom;
+        padding-right: 15px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .nk-teammate-card-info {
+        display: table-cell;
+        width: 50%;
+        padding-left: 15px;
+
+        > table {
+            width: 100%;
+        }
+        > table > tbody > tr > td {
+            padding: 20px 10px;
+        }
+        > table > tbody > tr + tr > td {
+            border-top: 1px dotted rgba($color_headings, 0.2);
+        }
+    }
+
+    @media #{$media_smaller_xs} {
+        display: block;
+
+        .nk-teammate-card-photo,
+        .nk-teammate-card-info {
+            display: block;
+            width: 100%;
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+}
+
+/* Score */
+.nk-match-score {
+    display: inline-block;
+    font-family: $font_headings;
+    color: $color_headings;
+    padding: 9px 19px;
+    font-size: 0.87rem;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    text-transform: uppercase;
+    border-radius: 4px;
+
+    background-color: lighten($color_dark_3, 20%);
+}
+
+/* Match */
+.nk-match {
+    display: table;
+    width: 100%;
+    padding: 20px;
+    background-color: $color_dark_3;
+    color: $color_headings;
+
+    + .nk-match {
+        margin-top: 15px;
+    }
+
+    .nk-match-team-left,
+    .nk-match-team-right,
+    .nk-match-status {
+        display: table-cell;
+        width: 35%;
+        vertical-align: middle;
+    }
+    .nk-match-status {
+        width: 30%;
+        text-align: center;
+
+        .nk-match-status-vs {
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+        .nk-match-status-date {
+            font-size: 0.9em;
+        }
+        .nk-match-score {
+            margin-top: 10px;
+        }
+    }
+    .nk-match-team-right {
+        text-align: right;
+    }
+    .nk-match-team-logo,
+    .nk-match-team-name {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .nk-match-team-name {
+        width: 90%;
+        font-family: $font_headings;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    .nk-match-team-left .nk-match-team-name {
+        padding-left: 20px;
+    }
+    .nk-match-team-right .nk-match-team-name {
+        padding-right: 20px;
+    }
+
+    @media #{$media_smaller_sm} {
+        display: block;
+
+        .nk-match-team-left,
+        .nk-match-team-right,
+        .nk-match-status {
+            display: block;
+            width: 100%;
+        }
+        .nk-match-status {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    }
+}
+
+/* Team */
+.nk-team {
+    display: table;
+    width: 100%;
+    background-color: $color_dark_3;
+    color: $color_headings;
+
+    + .nk-team {
+        margin-top: 15px;
+    }
+
+    .nk-team-logo,
+    .nk-team-cont {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .nk-team-cont {
+        position: relative;
+        padding: 20px;
+        width: 90%;
+        z-index: 0;
+
+        a {
+            color: inherit;
+            text-decoration: none;
+
+            &:hover,
+            &.hover,
+            &:focus,
+            &:active {
+                color: $color_main_1;
+            }
+        }
+
+        .nk-team-photo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-position: bottom right;
+            background-repeat: no-repeat;
+            z-index: -1;
+
+            @media #{$media_smaller_xs} {
+                display: none;
+            }
+        }
+    }
+}

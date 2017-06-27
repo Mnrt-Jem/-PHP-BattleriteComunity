@@ -1,0 +1,63 @@
+.nk-doc-links ul {
+    color: $color_headings;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+
+    // main menu items
+    > li > div {
+        cursor: pointer;
+        padding: 6.5px 0;
+        margin: 10px 0;
+        border-radius: 5px;
+        transition: .2s color;
+
+        &:hover {
+            color: darken($color_gray_4, 35%);
+        }
+        &.active {
+            color: $color_main_1;
+        }
+    }
+
+    // child menu items
+    > li > ul {
+        display: none;
+        overflow: hidden;
+    }
+    > li > ul > li div {
+        padding: 5px 0;
+        margin-left: 20px;
+
+        &:hover {
+            color: darken($color_gray_4, 35%);
+        }
+        &.active {
+            color: $color_main_1;
+        }
+        &:before {
+            content: '';
+            display: inline-block;
+            height: 0;
+            width: 0;
+            border-bottom: 1px solid;
+            vertical-align: middle;
+            margin-right: 5px;
+            margin-left: 0;
+            margin-top: -1px;
+            transition: .2s width, .2s margin-left;
+        }
+        &.active:before {
+            width: 10px;
+            margin-left: 5px;
+        }
+    }
+}
+
+.nk-doc {
+    > .nk-doc-item {
+        color: $color_headings;
+        padding: 35px;
+        background-color: $color_dark_2;
+    }
+}

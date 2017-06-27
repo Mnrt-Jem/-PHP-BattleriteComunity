@@ -1,0 +1,72 @@
+.nk-blockquote {
+    position: relative;
+    z-index: 1;
+    margin: 20px 0;
+    margin-top: 33px;
+    font-style: italic;
+
+    .nk-blockquote-icon {
+        display: table;
+        margin-bottom: 20px;
+
+        > span {
+            display: table-cell;
+            vertical-align: top;
+            color: $color_headings;
+            font-weight: bold;
+            cursor: default;
+            font-size: 96px;
+            line-height: 0;
+            height: 0;
+            padding-right: 25px;
+            user-select: none;
+        }
+
+        &:before,
+        &:after {
+            content: '';
+            display: table-cell;
+            vertical-align: top;
+            width: 100%;
+            border-bottom: 2px solid $color_main_1;
+            transform: translateY(-18px);
+        }
+        &:before {
+            width: 50px;
+            min-width: 50px;
+        }
+    }
+
+    .nk-blockquote-author {
+        text-align: right;
+        margin-top: 25px;
+
+        > span {
+            display: table-cell;
+            font-weight: bold;
+            white-space: nowrap;
+            color: $color_headings;
+            font-size: 0.95rem;
+            padding-right: 30px;
+            padding-left: 30px;
+        }
+
+        &:before,
+        &:after {
+            content: '';
+            display: table-cell;
+            width: 100%;
+            border-bottom: 2px solid $color_main_1;
+            transform: translateY(-10px);
+        }
+        &:after {
+            width: 50px;
+            min-width: 50px;
+        }
+    }
+
+    > a {
+        color: inherit;
+        text-decoration: none;
+    }
+}

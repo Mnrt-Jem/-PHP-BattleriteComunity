@@ -1,0 +1,63 @@
+.pswp__button {
+    opacity: 1;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.pswp__button--arrow--left {
+    left: 15px;
+}
+
+.pswp__button--arrow--right {
+    right: 15px;
+}
+
+.pswp__button--arrow--left:before,
+.pswp__button--arrow--right:before {
+    background-color: transparent;
+    height: 56px;
+    width: 56px;
+    top: 24px;
+    border: 4px solid $color_headings;
+    border-radius: 28px;
+}
+
+.pswp__button--arrow--left:before {
+    left: 8px;
+    background-position: -130px -34px;
+}
+
+.pswp__button--arrow--right:before {
+    right: 8px;
+    background-position: -85px -34px;
+}
+
+.pswp__top-bar {
+    left: 15px;
+    top: 15px;
+    right: 15px;
+    width: auto;
+}
+
+@media #{$media_xxs} {
+    .pswp__button--arrow--left {
+        left: 0;
+    }
+    .pswp__button--arrow--right {
+        right: 0;
+    }
+    .pswp__top-bar {
+        left: 0;
+        top: 15px;
+        right: 0;
+    }
+}
+
+.pswp__caption__center {
+    max-width: 520px;
+    padding: 40px;
+    font-size: inherit;
+    line-height: inherit;
+}

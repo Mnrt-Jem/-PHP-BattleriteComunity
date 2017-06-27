@@ -1,0 +1,140 @@
+/* Placeholders */
+::placeholder,
+.form-control::placeholder {
+    color: inherit;
+    opacity: 0.5;
+}
+
+/* Remove outline from focused buttons */
+button:focus {
+    outline: 0;
+}
+
+/* Ratings */
+.nk-rating {
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    font-size: 1.2rem;
+    color: $color_main_1;
+
+    input {
+        display: none;
+
+        &:checked ~ label {
+            span:first-child {
+                display: none;
+            }
+            span:last-child {
+                display: block;
+            }
+        }
+    }
+    label {
+        position: relative;
+        cursor: default;
+        clear: none;
+        float: right;
+        display: block;
+        cursor: pointer;
+        padding-right: 2px;
+        padding-left: 2px;
+        line-height: 1;
+        margin: 0;
+
+        span:first-child {
+            display: none;
+            display: block;
+        }
+        span:last-child {
+            display: none;
+        }
+
+        &:after,
+        &:before {
+            content: none;
+            display: none;
+        }
+
+        &:hover,
+        &:hover ~ label {
+            span:first-child {
+                display: none;
+            }
+            span:last-child {
+                display: block;
+            }
+        }
+    }
+}
+
+/* From Style 1 */
+.form-control {
+    padding: 6.5px 10px;
+    font-size: 1em;
+    font-weight: 400;
+    color: $color_headings;
+    background-color: transparent;
+    border: 1px solid $color_dark_3;
+    border-radius: 0;
+    transition: .15s border-color;
+
+    &:focus,
+    &.focus {
+        background-color: transparent;
+        border-color: $color_main_1;
+        color: $color_headings;
+    }
+}
+select.form-control:not([size]):not([multiple]) {
+    height: 32px;
+}
+.nk-input-group-btn {
+    display: table-cell;
+    position: relative;
+    white-space: nowrap;
+    vertical-align: middle;
+    width: 1%;
+}
+
+/* From Style 2 */
+.nk-form-style-1 {
+    .form-control {
+        color: $color_dark_1;
+        background-color: $color_headings;
+        border-color: $color_headings;
+
+        &:focus,
+        &.focus {
+            background-color: $color_headings;
+            border-color: $color_main_1;
+        }
+    }
+}
+
+/* Validation */
+div.nk-error {
+    font-weight: normal;
+    background-color: transparent;
+    font-size: 0.8em;
+    color: $color_danger;
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+}
+.form-control.nk-error,
+.nk-form-style-1 .form-control.nk-error {
+    background-color: rgba($color_danger, 0.4);
+    border-color: $color_danger;
+}
+
+.nk-form-response-success {
+    display: none;
+    color: $color_success;
+    margin: 15px 0;
+}
+.nk-form-response-error {
+    display: none;
+    color: $color_danger;
+    margin: 15px 0;
+}

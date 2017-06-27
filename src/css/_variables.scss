@@ -1,0 +1,109 @@
+// main colors
+$color_main_1: #dd163b;
+$color_main_2: #a714b9;
+$color_main_3: #38a220;
+$color_main_4: #22a2b1;
+$color_main_5: #1464d2;
+$color_main_6: #ef9e2b;
+
+$color_text: #6b8799;
+$color_headings: #fff;
+
+// bootstrap colors
+$color_primary: #0275D8;
+$color_success: #38a220;
+$color_info: #22a2b1;
+$color_warning: #ef9e2b;
+$color_danger: #e2361f;
+
+// dark colors
+$color_dark_1: #171e22;
+$color_dark_2: #273138;
+$color_dark_3: #313d46;
+$color_dark_4: lighten($color_dark_1, 12%);
+
+// gray colors
+$color_gray_1: #FAFAFA;
+$color_gray_2: darken($color_gray_1, 1%);
+$color_gray_3: darken($color_gray_1, 2%);
+$color_gray_4: darken($color_gray_1, 3%);
+
+// main colors list
+$colors: (
+    "main-1"  : $color_main_1,
+    "main-2"  : $color_main_2,
+    "main-3"  : $color_main_3,
+    "main-4"  : $color_main_4,
+    "main-5"  : $color_main_5,
+    "main-6"  : $color_main_6,
+    "primary" : $color_primary,
+    "success" : $color_success,
+    "info"    : $color_info,
+    "warning" : $color_warning,
+    "danger"  : $color_danger,
+    "white"   : #fff,
+    "black"   : #000,
+    "dark-1"  : $color_dark_1,
+    "dark-2"  : $color_dark_2,
+    "dark-3"  : $color_dark_3,
+    "dark-4"  : $color_dark_4
+);
+
+$colors_social: (
+    "rss": #E06618,
+    "behance": #487CFB,
+    "bitbucket": #36517E,
+    "dropbox": #4D86D9,
+    "dribbble": #CC4D86,
+    "deviantart": #BAC940,
+    "facebook": #475995,
+    "flickr": #DB0180,
+    "foursquare": #D94A75,
+    "github": #464646,
+    "google-plus": #C14D3D,
+    "instagram": #527198,
+    "linkedin": #457AB3,
+    "medium": #71C66D,
+    "odnoklassniki": #D8732A,
+    "paypal": #1D3283,
+    "pinterest": #AE262B,
+    "reddit": #DE470B,
+    "skype": #62ADED,
+    "soundcloud": #DF5611,
+    "slack": #543B56,
+    "steam": #272425,
+    "tumblr": #384961,
+    "twitch": #5C43A1,
+    "twitter": #6DA9DE,
+    "vimeo": #69B5E7,
+    "vk": #657DA0,
+    "wordpress": #4072A1,
+    "youtube": #C6271E
+);
+
+// audio player
+$audio_player_height: 62px;
+$audio_player_playlist_height: 250px;
+$audio_player_mobile_height: 170px;
+
+// fonts
+$font_headings: 'Montserrat', sans-serif;
+$font_body: 'Open Sans', sans-serif;
+$html_font_size: 14px;
+$body_line_height: 1.7;
+
+// media variables
+$media_xxs:           '(max-width: 543px)';
+$media_xs:            '(max-width: 767px)';
+$media_sm:            '(min-width: 767px) and (max-width: 991px)';
+$media_md:            '(min-width: 992px) and (max-width: 1199px)';
+$media_lg:            '(min-width: 1200)';
+
+// additional variables
+$media_smaller_xs:    '(max-width: 767px)';
+$media_smaller_sm:    '(max-width: 991px)';
+$media_smaller_md:    '(max-width: 1199px)';
+$media_larger_xs:     '(min-width: 544px)';
+$media_larger_sm:     '(min-width: 768px)';
+$media_larger_md:     '(min-width: 992px)';
+$media_larger_lg:     '(min-width: 1200px)';

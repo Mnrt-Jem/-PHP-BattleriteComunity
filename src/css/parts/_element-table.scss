@@ -1,0 +1,52 @@
+.nk-table {
+    width: 100%;
+    color: $color_headings;
+    border: 1px solid $color_dark_2;
+
+    th {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    thead {
+        background-color: $color_main_1;
+        font-size: 1.32rem;
+        th, td {
+            padding: 15px 25px;
+        }
+    }
+
+    tbody {
+        th {
+            padding: 19px 25px;
+        }
+        td {
+            padding: 28px 25px;
+        }
+        tr {
+            background-color: $color_dark_2;
+        }
+        tr:nth-of-type(odd) {
+            background-color: $color_dark_3;
+        }
+        tr > * + * {
+            border-left: 1px solid $color_dark_1;
+        }
+    }
+
+    &.nk-table {
+        thead {
+            th, td {
+                padding: 11px 18px;
+            }
+        }
+        tbody {
+            th {
+                padding: 14px 18px;
+            }
+            td {
+                padding: 20px 18px;
+            }
+        }
+    }
+}

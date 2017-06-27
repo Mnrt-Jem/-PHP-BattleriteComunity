@@ -1,0 +1,120 @@
+.nk-image-slider {
+    position: relative;
+    height: 360px;
+    overflow: hidden;
+    background-color: $color_dark_2;
+    border-bottom: 3px solid $color_main_1;
+    z-index: 0;
+
+    // hide items list
+    .nk-image-slider-item {
+        position: absolute;
+        width: 100%;
+        left: -150%;
+        overflow: hidden;
+    }
+
+    // background
+    .nk-image-slider-bg,
+    .nk-image-slider-bg-transition {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        background-size: cover;
+        background-position: center center;
+    }
+    .nk-image-slider-bg-transition {
+        z-index: -2;
+    }
+
+    // content
+    .nk-image-slider-content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 50px;
+        width: 315px;
+        background-color: rgba(#000, 0.8);
+
+        .nano-content {
+            padding: 25px;
+        }
+    }
+
+    // thumbs
+    .nk-image-slider-thumbs {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 315px;
+        height: 50px;
+        overflow: hidden;
+        background-color: rgba(#000, 0.8);
+
+        // fix click event
+        &.is-dragging {
+            pointer-events: none;
+        }
+
+        ul {
+            display: inline-block;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            white-space: nowrap;
+
+            li {
+                position: relative;
+                display: inline-block;
+                width: (315 / 4) + px;
+                height: 50px;
+                background-size: cover;
+                background-position: center center;
+                overflow: hidden;
+                cursor: pointer;
+
+                // overlay
+                .nk-image-slider-thumbs-overlay {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                    background-color: $color_main_1;
+                    opacity: 0.5;
+                    transition: .15s opacity;
+                }
+                &:hover .nk-image-slider-thumbs-overlay,
+                &.hover .nk-image-slider-thumbs-overlay {
+                    opacity: 0.2;
+                }
+
+                // active item
+                &.nk-image-slider-thumbs-active .nk-image-slider-thumbs-overlay {
+                    opacity: 0;
+                }
+                
+                // counter
+                .nk-image-slider-thumbs-count {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin-left: -15px;
+                    margin-top: -15px;
+                    width: 30px;
+                    height: 30px;
+                    line-height: 30px;
+                    border-radius: 50%;
+                    background-color: $color_headings;
+                    text-align: center;
+                    font-weight: bold;
+                    color: #000;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}

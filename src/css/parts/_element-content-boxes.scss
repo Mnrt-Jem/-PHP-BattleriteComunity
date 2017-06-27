@@ -1,0 +1,68 @@
+.nk-box,
+.nk-box-1,
+.nk-box-2,
+.nk-box-3,
+.nk-box-4,
+.nk-box-rounded,
+.nk-box-rounded-1,
+.nk-box-rounded-2,
+.nk-box-rounded-3,
+.nk-box-rounded-4 {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    z-index: 1;
+    height: 100%;
+}
+.nk-box-1,
+.nk-box-rounded-1 {
+    padding: 20px;
+}
+.nk-box-2,
+.nk-box-rounded-2 {
+    padding: 40px;
+}
+.nk-box-3,
+.nk-box-rounded-3 {
+    padding: 60px;
+}
+.nk-box-4,
+.nk-box-rounded-4 {
+    padding: 80px;
+}
+.nk-box-rounded,
+.nk-box-rounded-1,
+.nk-box-rounded-2,
+.nk-box-rounded-3,
+.nk-box-rounded-4 {
+    border-radius: 6px;
+}
+
+/* line between boxes
+   Used JS code to add .nk-box-line-top and .nk-box-last classnames */
+.nk-box-line {
+    // line
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 2rem;
+        bottom: 2rem;
+        right: 0;
+        border-left: 1px solid;
+        opacity: 0.07;
+    }
+    &.nk-box-line-top:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 2rem;
+        right: 2rem;
+        border-bottom: 1px solid;
+        opacity: 0.07;
+    }
+    &.nk-box-last:before {
+        content: none;
+    }
+}

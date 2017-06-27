@@ -1,0 +1,132 @@
+/* Like / Dislike Animation */
+.nk-like-animation,
+.nk-dislike-animation {
+    position: fixed;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: none;
+    user-select: none;
+    cursor: default;
+    white-space: nowrap;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 300px;
+    margin-top: -150px;
+    line-height: 300px;
+    font-size: 7rem;
+    color: #fff;
+    background-color: $color_success;
+    z-index: 2000;
+
+    @media #{$media_xs} {
+        font-size: 5rem;
+    }
+    @media #{$media_xxs} {
+        font-size: 3rem;
+    }
+    @media (max-height: 500px) {
+        height: 200px;
+        margin-top: -100px;
+        line-height: 200px;
+    }
+}
+.nk-dislike-animation {
+    background-color: $color_danger;
+}
+
+/* Heart */
+.nk-action-heart {
+    float: right;
+    cursor: pointer;
+    transition: .3s opacity;
+    font-style: italic;
+    user-select: none;
+    opacity: 0.8;
+
+    &:hover,
+    &.hover {
+        opacity: 1;
+    }
+
+    &,
+    &:focus,
+    &:hover,
+    &:active {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    > span {
+        display: inline-block;
+        font-size: 1rem;
+        vertical-align: middle;
+        margin-top: -3px;
+    }
+    > .num {
+        font-size: 0.7rem;
+    }
+
+    // icons
+    .liked-icon {
+        display: none;
+    }
+
+    &.liked {
+        .liked-icon {
+            display: inline-block;
+        }
+        .like-icon {
+            display: none;
+        }
+    }
+}
+
+/* Like / Dislike */
+.nk-action-like {
+    float: right;
+    font-style: italic;
+    user-select: none;
+    margin-left: 13px;
+
+    &,
+    &:focus,
+    &:hover,
+    &:active {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    > span {
+        display: inline-block;
+        font-size: 1rem;
+        vertical-align: middle;
+        margin-top: -3px;
+    }
+    > .num {
+        font-size: 0.7rem;
+        margin-right: 3px;
+    }
+    > .like-icon,
+    > .dislike-icon {
+        cursor: pointer;
+        opacity: 0.8;
+        transition: .3s opacity;
+        padding: 5px;
+
+        &:hover,
+        &.hover {
+            opacity: 1;
+        }
+    }
+
+    &.disliked > .like-icon,
+    &.liked > .dislike-icon {
+        opacity: 0.4
+    }
+    &.disliked > .dislike-icon,
+    &.liked > .like-icon {
+        opacity: 1
+    }
+}
