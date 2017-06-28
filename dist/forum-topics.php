@@ -115,11 +115,15 @@ if(isset($_GET['categorie']) AND !empty($_GET['categorie'])) {
         <div class="container">
 
             <!-- START: Pagination -->
+            <?php if(isset($_SESSION['id']) and $user == 0) { ?>
             <div class="row">
                 <div class="col-md-3 push-md-9 text-xs-right">
                     <a href="forum-new-topic.php?categorie=<?= $id_categorie ?>" class="nk-btn nk-btn-rounded nk-btn-color-white">NEW POST</a>
                 </div>
             </div>
+            <?php } else { ?>
+                <p>Veuillez vous connecter ou créer un compte pour poster une réponse</p>
+            <?php } ?>
             <!-- END: Pagination -->
 
             <div class="nk-gap-2"></div>
