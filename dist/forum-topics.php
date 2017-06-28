@@ -6,6 +6,10 @@ if(isset($_GET['categorie']) AND !empty($_GET['categorie'])) {
    $get_categorie = htmlspecialchars($_GET['categorie']);
    $categories = array();
    $req_categories = $con->query('SELECT * FROM f_categories');
+   $userinfo=$con->prepare('SELECT * FROM utilisateur where id_utilisateur = :id');
+   $userinfo->bindparam(':id',$_SESSION['id']);
+    $userinfo->execute();
+    $user = $userinfo->fetch()['f_muted'];
    while($c = $req_categories->fetch()) {
       array_push($categories, array($c['id'],url_custom_encode($c['nom'])));
    }
