@@ -9,6 +9,10 @@ if(isset($_GET['titre'],$_GET['id']) AND !empty($_GET['titre']) AND !empty($_GET
    $titre_original = $con->prepare('SELECT sujet FROM f_topics WHERE id = ?');
    $titre_original->execute(array($get_id));
    $titre_original = $titre_original->fetch()['sujet'];
+   $userinfo=$con->prepare('SELECT * FROM utilisateur where id_utilisateur = :id');
+   $userinfo->bindparam(':id',$_SESSION['id']);
+    $userinfo->execute();
+    $user = $userinfo->fetch()['f_muted'];
    if($get_titre == url_custom_encode($titre_original)) {
       $topic = $con->prepare('SELECT * FROM f_topics WHERE id = ?');
       $topic->execute(array($get_id));
@@ -93,9 +97,16 @@ if(isset($_GET['titre'],$_GET['id']) AND !empty($_GET['titre']) AND !empty($_GET
         <div class="container">
 
             <!-- START: Pagination -->
-            <div class="row">
+           <div class="row">
                 <div class="col-md-3 push-md-9 text-xs-right">
                     <a href="#forum-reply" class="nk-btn nk-btn-rounded nk-btn-color-white nk-anchor">REPONDRE</a>
+                    <?php if (isset($_SESSION['id']) AND $_SESSION['rank'] == "admin") { ?>
+                    <div style="float: right;"><form method="POST" action="">
+                    <input type="hidden" name="id" value="<?= $get_id ?>">
+                    <input type="submit" name="delete_topic" class="nk-btn nk-btn-rounded nk-btn-color-main-1 nk-btn-hover-color-white" value="DELETE">
+                    </form></div>
+                    <?php } 
+                    else {}?>
                 </div>
             </div>
             <!-- END: Pagination -->
@@ -173,7 +184,7 @@ if(isset($_GET['titre'],$_GET['id']) AND !empty($_GET['titre']) AND !empty($_GET
             <div class="nk-gap-4"></div>
             <!-- START: Reply -->
             <h3 class="h4">Repondre</h3>
-            <?php if(isset($_SESSION['id'])) { ?>
+            <?php if(isset($_SESSION['id']) and $user == 0) { ?>
                 <form method="POST">
                     <div class="nk-gap-1"></div>
                     <div class=col-lg-12>
